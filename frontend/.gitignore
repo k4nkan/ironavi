@@ -1,0 +1,9 @@
+# global
+.DS_Store
+.env
+
+# logs
+*.log
+
+# VSCode
+.vscode

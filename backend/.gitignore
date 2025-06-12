@@ -1,0 +1,14 @@
+# global
+.DS_Store
+.env
+.env.local
+.env.production
+
+# Node
+node_modules/
+
+# logs
+*.log
+
+# VSCode
+.vscode
