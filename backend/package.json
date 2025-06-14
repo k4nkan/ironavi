@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development dotenv -e .env.local ts-node src/server.ts",
-    "start": "NODE_ENV=production dotenv -e .env.production node dist/server.js",
+    "dev": "NODE_ENV=local ts-node src/server.ts",
+    "start": "NODE_ENV=production node dist/server.js",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,9 +13,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "openai": "^5.3.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",

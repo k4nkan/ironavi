@@ -1,9 +1,9 @@
+// routes/main/index.ts
 import { Router } from "express";
+import { handleMainRequest } from "./controller";
 
 const router = Router();
 
-router.get("/", (_, res) => {
-  res.status(200).json({ status: "ok" });
-});
+router.post("/", handleMainRequest);
 
 export { router as mainRouter };
