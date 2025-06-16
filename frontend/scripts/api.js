@@ -1,12 +1,10 @@
 import { API_URL } from "./config.js";
 
-export async function fetchColorScheme(input, number) {
-  console.log("API URL:", API_URL);
-
+export async function fetchColorScheme(inputData) {
   const res = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ input, number }),
+    body: JSON.stringify(inputData),
   });
 
   const data = await res.json();

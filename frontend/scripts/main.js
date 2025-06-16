@@ -7,19 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     const formData = new FormData(form);
-    const theme = formData.get("theme")?.toString().trim();
+    const input = formData.get("theme")?.toString().trim();
     const number = Number(formData.get("number"));
 
-    if (!theme) {
+    if (!input) {
       alert("テーマを入力してください");
       return;
     }
 
     try {
-      const reply = await fetchColorScheme(theme, number);
-      console.log(reply);
+      const reply = await fetchColorScheme({ input, number });
+      console.log("生成された配色:", reply);
     } catch (err) {
-      console.log(err);
+      console.error("fetch 失敗:", err);
     }
   });
 });
