@@ -7,22 +7,17 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
-    <section>
-      <form id="form">
-        <label for="theme">テーマ：</label>
-        <input type="text" id="theme" name="theme" />
+    <section class="form flex">
+      <h1>どんな配色にする？</h1>
 
-        <label for="number">色の数：</label>
+      <form id="form" class="flex">
         <input
-          type="range"
-          id="number"
-          name="number"
-          min="5"
-          max="10"
-          value="5"
+          type="text"
+          id="theme"
+          name="theme"
+          placeholder="配色のテーマは？"
         />
-
-        <button type="submit">生成する</button>
+        <button type="submit">></button>
       </form>
     </section>
 
