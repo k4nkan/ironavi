@@ -1,6 +1,10 @@
 export function updateColor(result) {
   const roles = ["main", "bg1", "bg2", "text", "accent1", "accent2"];
-  const colorsContainer = document.querySelector(".colors");
+
+  const resultContainer = document.querySelector(".result");
+
+  const colorsContainer = document.createElement("div");
+  colorsContainer.className = "colors";
 
   let subContainer = document.createElement("div");
   subContainer.className = "subContainer";
@@ -38,4 +42,5 @@ export function updateColor(result) {
   });
 
   colorsContainer.appendChild(subContainer);
+  resultContainer.appendChild(colorsContainer);
 }
