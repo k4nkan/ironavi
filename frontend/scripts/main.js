@@ -1,4 +1,5 @@
 import { fetchColorScheme } from "./api.js";
+import { updateColor } from "./updateColor.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form");
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const formData = new FormData(form);
     const input = formData.get("theme")?.toString().trim();
-    const number = Number(formData.get("number"));
+    const number = Number(6);
 
     if (!input) {
       alert("テーマを入力してください");
@@ -16,8 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const reply = await fetchColorScheme({ input, number });
-      console.log("生成された配色:", reply);
+      const result = await fetchColorScheme({ input, number });
+      console.log("レスポンス：", result);
+      const parsed = JSON.parse(result);
+      updateColor(parsed);
     } catch (err) {
       console.error("fetch 失敗:", err);
     }

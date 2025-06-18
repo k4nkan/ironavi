@@ -4,7 +4,7 @@ export function buildPrompt(theme, number) {
 
 各色には、以下の順で適切な役割（role）を割り当ててください：
 main, bg1, bg2, text, accent1, accent2, accent3,,,（必要数だけ）
-gb2 は text が適切に読める色にして下さい。
+可読性のためにbg1, bg2, text はなるべく彩度の低いものにして下さい。
 
 配色は、補色・類似色・トライアドなどの配色理論を用いて構成してください。
 
