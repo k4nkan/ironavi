@@ -2,7 +2,7 @@ export function updateColor(result) {
   const roles = ["main", "bg1", "bg2", "text", "accent1", "accent2"];
 
   // 結果を追加していくdiv
-  const resultContainer = document.querySelector(".result");
+  const resultContainer = document.getElementById("sideMenu");
 
   // 結果を入れるdiv
   const colorsContainer = document.createElement("div");

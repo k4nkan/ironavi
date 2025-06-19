@@ -1,8 +1,9 @@
 import { fetchColorScheme } from "./api.js";
 import { updateColor } from "./updateColor.js";
-import { displayLoading, hideLoading } from "./handleLoading.js";
+import { removeClassHide, addClassHide } from "./handleClass.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // フォームに関する処理
   const form = document.getElementById("form");
 
   form.addEventListener("submit", async (event) => {
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      displayLoading();
+      removeClassHide("loading");
 
       const result = await fetchColorScheme({ input, number });
       console.log("レスポンス：", result);
@@ -27,7 +28,28 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (err) {
       console.error("fetch 失敗:", err);
     } finally {
-      hideLoading();
+      addClassHide("loading");
     }
+  });
+
+  // サイドメニューに関する処理
+  const openMenuButton = document.querySelector(".openMenuButton");
+  const closeMenuButton = document.querySelector(".closeMenuButton");
+
+  const sideMenuBack = document.getElementById("sideMenuBack");
+
+  openMenuButton.addEventListener("click", () => {
+    removeClassHide("sideMenuBack");
+    removeClassHide("sideMenu");
+  });
+
+  closeMenuButton.addEventListener("click", () => {
+    addClassHide("sideMenuBack");
+    addClassHide("sideMenu");
+  });
+
+  sideMenuBack.addEventListener("click", () => {
+    addClassHide("sideMenuBack");
+    addClassHide("sideMenu");
   });
 });

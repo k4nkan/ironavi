@@ -6,12 +6,20 @@ body {
   width: 100%;
   position: relative;
   background: white;
+  overflow: hidden;
 }
 
 .flex {
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+button {
+  width: 60px;
+  height: 30px;
+  background: grey;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
