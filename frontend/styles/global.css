@@ -2,4 +2,24 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: white;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 60px;
+  height: 30px;
+  background: grey;
+  border: none;
+  color: white;
+  cursor: pointer;
 }

@@ -1,0 +1,44 @@
+.openMenuButton {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 5;
+}
+
+.closeMenuButton {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+#sideMenu {
+  position: relative;
+  flex-direction: column;
+  justify-content: start;
+  gap: 25px;
+  position: relative;
+  z-index: 10;
+  padding: 80px 0 25px 0;
+  box-sizing: border-box;
+
+  height: 100%;
+  width: 350px;
+
+  background: white;
+
+  overflow-y: auto;
+
+  #sideMenuAlert {
+    position: absolute;
+    top: 50%;
+  }
+}
+
+#sideMenuBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+
+  background: rgba(0, 0, 0, 0.1);
+}

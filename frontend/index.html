@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>いろナビ</title>
     <link rel="stylesheet" href="styles/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.177.0/three.min.js"></script>
   </head>
   <body>
-    <section>
-      <form id="form">
-        <label for="theme">テーマ：</label>
-        <input type="text" id="theme" name="theme" />
+    <canvas id="loading" class="hide"></canvas>
 
-        <label for="number">色の数：</label>
-        <input
-          type="range"
-          id="number"
-          name="number"
-          min="5"
-          max="10"
-          value="5"
-        />
-
-        <button type="submit">生成する</button>
+    <section class="form flex">
+      <h1>どんな配色にする？</h1>
+      <form id="form" class="flex">
+        <input type="text" id="theme" name="theme" placeholder="配色テーマ" />
+        <button type="submit">></button>
       </form>
     </section>
+
+    <div id="sideMenuBack" class="hide"></div>
+
+    <button class="openMenuButton flex">Menu</button>
+
+    <div id="sideMenu" class="flex hide">
+      <button class="closeMenuButton flex">Close</button>
+      <div id="sideMenuAlert">まだ配色が生成されていません。</div>
+    </div>
 
     <script type="module" src="scripts/main.js"></script>
   </body>
