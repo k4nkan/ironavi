@@ -1,27 +1,30 @@
 export function buildPrompt(theme, number) {
   return `
-テーマ「${theme}」に基づき、${number}色で統一感のある配色パレットを生成してください。
+Generate a harmonious color palette based on the theme "${theme}" with a total of ${number} colors.
 
-各色には、以下の順で適切な役割（role）を割り当ててください：
-main, bg1, bg2, text, accent1, accent2, accent3,,,（必要数だけ）
-可読性のためにbg1, bg2, text はなるべく彩度の低いものにして下さい。
+Each color must be assigned one of the following roles, in this order:
+main, bg1, bg2, text, accent1, accent2, accent3... (use as many as needed based on the number)
 
-配色は、補色・類似色・トライアドなどの配色理論を用いて構成してください。
+Ensure that:
+- The color choices are well-balanced and visually cohesive.
+- The combination of **text**, **main**, and **background (bg1/bg2)** colors maintains **sufficient contrast and readability**.
+- The overall palette should be practical for UI use and not just aesthetically pleasing.
+- Apply established color theory (such as Complementary, Analogous, Triadic, etc.) to build the palette.
 
-以下のJSON形式で **英語で** 出力してください（構文ミスなく、整形式で）：
+Return the result in **valid, well-structured JSON** format and in **English**:
 
 {
   "original_theme": "${theme}",
-  "translated_theme": "<テーマの英語訳>",
-  "strategy": "<使用した配色理論（例: Complementary, Analogous など)>",
+  "translated_theme": "<English translation of the theme>",
+  "strategy": "<Color theory used (e.g., Complementary, Analogous, etc.)>",
   "colors": [
     {
       "name": "Primary",
       "hex": "#RRGGBB",
-      "role": "<使用目的（main / bg1 / bg2 / text / accentX など)>",
-      "description": "<なぜその色を選んだのか、役割との関係性も含めて英語で説明>"
+      "role": "<Role such as main / bg1 / bg2 / text / accentX>",
+      "description": "<Explain why the color was chosen, how it supports its role, and its relationship to the theme>"
     }
-    // ... ${number} 個分の色を含めてください
+    // ... include ${number} colors in total
   ]
 }
 `.trim();
