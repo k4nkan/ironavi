@@ -4,6 +4,7 @@ export async function fetchColorScheme(inputData) {
   const res = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
+    credentials: "include",
     body: JSON.stringify(inputData),
   });
 
