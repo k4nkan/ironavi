@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("レスポンス：", result);
       const parsed = JSON.parse(result);
       updateColor(parsed);
+      addClassHide("sideMenuAlert");
     } catch (err) {
       console.error("fetch 失敗:", err);
     } finally {
