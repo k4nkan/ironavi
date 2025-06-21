@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
       removeClassHide("loading");
 
       const result = await fetchColorScheme({ input, number });
-      console.log("レスポンス：", result);
       const parsed = JSON.parse(result);
+
       updateColor(parsed);
       addClassHide("sideMenuAlert");
     } catch (err) {
