@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>いろナビ</title>
     <link rel="stylesheet" href="styles/main.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.177.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.js"></script>
   </head>
   <body>
     <canvas id="loading" class="hide"></canvas>
+
+    <div id="pageBackground"></div>
+    <script src="./scripts/updateBackground.js"></script>
 
     <section class="form flex">
       <h1>どんな配色にする？</h1>
@@ -28,5 +31,6 @@
     </form>
 
     <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/updateDesign.js"></script>
   </body>
 </html>

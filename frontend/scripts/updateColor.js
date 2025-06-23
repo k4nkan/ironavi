@@ -25,7 +25,7 @@ export function updateColor(result) {
   // Mainカラーの表示
   const mainContainer = document.createElement("div");
   mainContainer.className = "mainContainer flex";
-  mainContainer.style.backgroundColor = result.colors[0].hex; // mainカラーを背景に
+  mainContainer.style.backgroundColor = result.colors[0].hex;
 
   // テーマ名のテキスト
   const themeText = document.createElement("div");
