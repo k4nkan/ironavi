@@ -1,6 +1,7 @@
 import { fetchColorScheme } from "./api.js";
 import { updateColor } from "./updateColor.js";
 import { removeClassHide, addClassHide } from "./handleClass.js";
+import { colorDatas } from "./data.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // フォームに関する処理
@@ -22,8 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
       removeClassHide("loading");
 
       const result = await fetchColorScheme({ input, number });
-      console.log("レスポンス：", result);
       const parsed = JSON.parse(result);
+
+      colorDatas.push(parsed.colors);
+
+      console.log(parsed.colors);
       updateColor(parsed);
       addClassHide("sideMenuAlert");
     } catch (err) {

@@ -1,22 +1,36 @@
 .colors {
-  display: flex;
-
-  .mainContainer {
-    display: flex;
-    flex-direction: column;
-    height: 200px;
-    width: 200px;
-    font-size: 20px;
+  label {
+    border: 3px solid transparent;
+    cursor: pointer;
   }
 
-  .subContainer {
-    display: flex;
-    flex-direction: column;
+  input[type="radio"] {
+    display: none;
+  }
 
-    div {
-      height: 40px;
-      width: 100px;
-      font-size: 12px;
+  input[type="radio"]:checked + label {
+    border: 3px solid gray;
+  }
+
+  label {
+    display: flex;
+    .mainContainer {
+      display: flex;
+      flex-direction: column;
+      height: 200px;
+      width: 200px;
+      font-size: 20px;
+    }
+
+    .subContainer {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        height: 40px;
+        width: 100px;
+        font-size: 12px;
+      }
     }
   }
 }
