@@ -1,34 +1,43 @@
-let colors = ["#FF6B6B", "#6BCB77", "#4D96FF", "#FFD93D", "#C77DFF"];
-let circles = [];
+import { colors } from "./data.js";
 
-function setup() {
-  createCanvas(windowWidth, windowHeight).parent("pageBackground");
+const sketch = (p) => {
+  let circles = [];
 
-  for (let i = 0; i < 20; i++) {
-    circles.push({
-      x: random(width),
-      y: random(-height, 0),
-      r: random(50, 100),
-      speed: random(1, 3),
-      color: random(colors),
-    });
-  }
-}
+  p.setup = () => {
+    p.createCanvas(p.windowWidth, p.windowHeight).parent("pageBackground");
 
-function draw() {
-  background(255);
+    const circleColors = colors.filter((_, i) => i !== 0).map((c) => c.hex);
 
-  for (let c of circles) {
-    c.y += c.speed;
-
-    if (c.y - c.r > height) {
-      c.y = -c.r;
-      c.x = random(width);
-      c.color = random(colors);
+    for (let i = 0; i < 20; i++) {
+      circles.push({
+        x: p.random(p.width),
+        y: p.random(-p.height, 0),
+        r: p.random(50, 100),
+        speed: p.random(1, 3),
+        color: p.random(circleColors),
+      });
     }
+  };
 
-    fill(c.color);
-    noStroke();
-    ellipse(c.x, c.y, c.r * 2);
-  }
-}
+  p.draw = () => {
+    p.background(colors[0].hex);
+
+    const circleColors = colors.filter((_, i) => i !== 0).map((c) => c.hex);
+
+    for (let c of circles) {
+      c.y += c.speed;
+
+      if (c.y - c.r > p.height) {
+        c.y = -c.r;
+        c.x = p.random(p.width);
+        c.color = p.random(circleColors);
+      }
+
+      p.fill(c.color);
+      p.noStroke();
+      p.ellipse(c.x, c.y, c.r * 2);
+    }
+  };
+};
+
+new p5(sketch, "pageBackground");
