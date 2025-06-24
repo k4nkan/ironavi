@@ -1,30 +1,34 @@
 export function buildPrompt(theme, number) {
   return `
-Generate a harmonious color palette based on the theme "${theme}" with a total of ${number} colors.
+Generate a UI-friendly color palette of ${number} colors based on the theme "${theme}".
 
-Each color must be assigned one of the following roles, in this order:
-main, bg1, bg2, text, accent1, accent2, accent3... (use as many as needed based on the number)
+Use this role order: main, text, border, accent1, accent2, accent3... (extend accents as needed)
 
-Ensure that:
-- The color choices are well-balanced and visually cohesive.
-- The combination of **text**, **main**, and **background (bg1/bg2)** colors maintains **sufficient contrast and readability**.
-- The overall palette should be practical for UI use and not just aesthetically pleasing.
-- Apply established color theory (such as Complementary, Analogous, Triadic, etc.) to build the palette.
+**Role definitions:**
+- main: Background color with the largest visual area.
+- border: For decorative lines and outlines.
+- text: Close to black or white, high contrast over main.
+- accentX: Decorative/supporting colors that enhance the theme.
 
-Return the result in **valid, well-structured JSON** format and in **English**:
+Requirements:
+- Colors should be conceptually related to "${theme}".
+- Use color theory (complementary, analogous, triadic, etc.).
+- Ensure visual harmony and good readability.
+
+Respond in English with valid JSON:
 
 {
   "original_theme": "${theme}",
-  "translated_theme": "<English translation of the theme>",
-  "strategy": "<Color theory used (e.g., Complementary, Analogous, etc.)>",
+  "translated_theme": "<English translation>",
+  "strategy": "<Color theory used>",
   "colors": [
     {
-      "name": "Primary",
+      "name": "<Color name>",
       "hex": "#RRGGBB",
-      "role": "<Role such as main / bg1 / bg2 / text / accentX>",
-      "description": "<Explain why the color was chosen, how it supports its role, and its relationship to the theme>"
+      "role": "<main | border | text | accentX>",
+      "description": "<Why this color fits its role and theme>"
     }
-    // ... include ${number} colors in total
+    // ... ${number} colors total
   ]
 }
 `.trim();

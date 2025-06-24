@@ -6,7 +6,7 @@ const sketch = (p) => {
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight).parent("pageBackground");
 
-    const circleColors = colors.filter((_, i) => i !== 0).map((c) => c.hex);
+    const circleColors = colors.slice(2, 6).map((c) => c.hex);
 
     for (let i = 0; i < 20; i++) {
       circles.push({
@@ -22,7 +22,7 @@ const sketch = (p) => {
   p.draw = () => {
     p.background(colors[0].hex);
 
-    const circleColors = colors.filter((_, i) => i !== 0).map((c) => c.hex);
+    const circleColors = colors.slice(2, 6).map((c) => c.hex);
 
     for (let c of circles) {
       c.y += c.speed;
