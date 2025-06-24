@@ -1,4 +1,4 @@
-import { colorDatas, setColors } from "./data.js";
+import { colorDatas, getColors, setColors } from "./data.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const sideMenu = document.getElementById("sideMenu");
@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("変更で選ばれた配色:", selectedData);
 
       setColors(selectedData);
+      const currentColors = getColors();
+
+      const title = document.getElementById("form-title");
+      title.style.color = currentColors[1].hex;
     }
   });
 });

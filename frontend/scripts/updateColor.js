@@ -30,12 +30,12 @@ export function updateColor(result) {
   // テーマ名のテキスト
   const themeText = document.createElement("div");
   themeText.textContent = result.original_theme;
-  themeText.style.color = result.colors[3].hex;
+  themeText.style.color = result.colors[1].hex;
 
   // mainのHEXコード
   const mainHexText = document.createElement("div");
   mainHexText.textContent = result.colors[0].hex;
-  mainHexText.style.color = result.colors[3].hex;
+  mainHexText.style.color = result.colors[1].hex;
 
   // mainContainer にテキストを追加
   mainContainer.appendChild(themeText);
@@ -52,7 +52,7 @@ export function updateColor(result) {
     const hexText = document.createElement("div");
     hexText.className = "flex";
     hexText.textContent = result.colors[i].hex;
-    hexText.style.color = i !== 3 ? result.colors[3].hex : result.colors[0].hex;
+    hexText.style.color = i !== 1 ? result.colors[1].hex : result.colors[0].hex;
 
     // 背景色とテキストをまとめたコンテナ
     const hexContainer = document.createElement("div");
