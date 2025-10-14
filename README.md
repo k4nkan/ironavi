@@ -22,7 +22,7 @@
 ### 🚀 デプロイ
 
 - Frontend: [Vercel](https://vercel.com/)
-- Backend: [Railway](https://railway.app/)
+- Backend: [Render](https://render.com/)
 
 ---
 
