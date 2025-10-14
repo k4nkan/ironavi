@@ -3,4 +3,4 @@ const isLocalhost =
 
 export const API_URL = isLocalhost
   ? "http://localhost:3000"
-  : "https://ironavi-production.up.railway.app";
+  : "https://ironavi.onrender.com";
